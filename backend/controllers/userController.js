@@ -126,11 +126,10 @@ const updateUserPost = [
     })
 ];
 
-// Handle Log In User Tom123, hashmeplease
+// Handle Log In User 
 const loginUser = asyncHandler(async (req, res, next) => {
     let { user_name, password } = req.body;
     const user = await UserModel.findOne({ user_name: user_name }).exec();
-    // THIS LOOKUP WILL BE DONE USING A DATABASE
     if (!user) {
         return res.status(400).json({ message: "Invalid username or password" });
     };

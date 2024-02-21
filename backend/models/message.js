@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const MessageSchema = new Schema ({
-    body: { type: String, required: true },
+    message: { type: String, required: true },
     author: { type:Schema.Types.ObjectId, ref: "User", required: true },
 }, { timestamps: true });
 

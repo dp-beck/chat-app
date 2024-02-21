@@ -61,7 +61,7 @@ router.get('/chatrooms', chatroomList);
 router.get('/chatrooms/:id', getChatroom);
 
 /* GET Chatroom Create. */
-router.get('/chatrooms/create', createChatroom);
+router.post('/chatrooms/create', createChatroom);
 
 /* Delete Chatroom. */
 router.delete('/chatrooms/:id/delete', deleteChatroom);

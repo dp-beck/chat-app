@@ -31,12 +31,13 @@ const createChatroom = asyncHandler(async (req, res, next) => {
             messages: [],
         });
     await chatroom.save();
+    res.send(chatroom);
 });
 
 // Update Chatroom
 const updateChatroom = asyncHandler(async (req, res, next) => {
-    await ChatroomModel.findByIdAndUpdate(req.params.id, {$push: {"messages": req.body.newMessage}});
-    return;
+    const updatedChatroom = await ChatroomModel.findByIdAndUpdate(req.params.id, {$push: {"messages": req.body.newMessage}});
+    res.send(updatedChatroom);
 });
 
 const deleteChatroom = asyncHandler(async (req, res, next) => {

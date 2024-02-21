@@ -44,6 +44,7 @@ const createMessage = [
             return;
         } else {
             await message.save();
+            res.send(message);
         }
     })
 ]

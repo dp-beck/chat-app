@@ -1,7 +1,4 @@
 
-TEST UPDATE OF CHATROOM
-Fix Sign In / Sign Up to include BCRYPT and reference to mongo database
-
 Authorization
 
 Data Models
