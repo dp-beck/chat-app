@@ -1,3 +1,6 @@
+login info for dummy user:
+user_name: test
+password: testtest
 
 Authorization
 

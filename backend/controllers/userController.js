@@ -4,8 +4,6 @@ import { body, validationResult } from 'express-validator';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
-// HOW DO I HANDLE SIGNING A USER IN AND OUT AGAIN?
-
 // Display List of Users
 const userList = asyncHandler(async (req, res, next) => {
     const allUsers = await UserModel.find({})
@@ -140,7 +138,7 @@ const loginUser = asyncHandler(async (req, res, next) => {
         return res.status(400).json({ message: "Invalid username or password" });
     };
 
-    const secret = 'SECRET_KEY'; // TO DO: will be stored in process.env.secret
+    const secret = 'SECRET_KEY'; 
     const token = jwt.sign({ user_name: user.user_name }, secret, { expiresIn: "1hr" });
     
     return res.status(200).json({
